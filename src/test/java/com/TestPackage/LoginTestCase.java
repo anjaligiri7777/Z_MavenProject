@@ -1,6 +1,6 @@
 package com.TestPackage;
 
-import java.io.IOException;		
+import java.io.IOException;			
 
 import org.testng.Assert;				
 import org.testng.annotations.BeforeClass;
@@ -41,20 +41,22 @@ public class LoginTestCase extends BaseClass{
 //		Assert.assertEquals(title,"OrangeHRM");
 //   }
 	@Test
-	public void LoginTest() throws IOException, InterruptedException 
+	public void LoginTest() throws IOException, InterruptedException
 	{ 
 		//SoftAssert sa = new SoftAssert();
 		LoginPomClass log = new LoginPomClass();
+		 Thread.sleep(4000);
 		String username = log.getuser();
 	    String password = log.getpassword();
+	    
 	    log.setUsername(username);
 	  //  sa.assertEquals(username,"Admin");
 	    log.setPassword(password);
 	  //  sa.assertEquals(password,"admin12");
 	    log.SubmitButton();
 	   // sa.assertAll();
-	    Thread.sleep(7000);
-	    UtilityClass.takeScreenshot("trial");
+	  Thread.sleep(0);
+	   // UtilityClass.takeScreenshot("trial");
 	   
 	 
 	    

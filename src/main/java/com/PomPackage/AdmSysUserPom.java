@@ -1,14 +1,22 @@
 package com.PomPackage;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.ss.usermodel.Sheet;
 import org.openqa.selenium.WebElement;	
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.BasePackage.BaseClass;
+import com.UtilityPackage.ExcelReaderClass;
 import com.UtilityPackage.UtilityClass;
 
 
 public class AdmSysUserPom extends BaseClass{
+	
+	
 	
 	public AdmSysUserPom() 
 	{
@@ -68,9 +76,17 @@ public class AdmSysUserPom extends BaseClass{
 	{
 		UtilityClass.eleClick(DownArrow);
 	}
-	public void AdminGetUsername(String value) 
+//	public void AdminGetUsername(String value) 
+//	{
+//       UtilityClass.setText(value, Adminusername);
+//	}
+	public void AdminUsernameExcel() throws EncryptedDocumentException, IOException 
 	{
-       UtilityClass.setText(value, Adminusername);
+		 FileInputStream path = ExcelReaderClass.Excelpath("Orange_UserSystem.xlsx");
+	     Sheet sh = ExcelReaderClass.sheetRead(path,"Sheet1");
+	     Object data = ExcelReaderClass.getSingleData(sh, 1, 0);
+	    //data.toString();
+	     UtilityClass.setText(data.toString(), Adminusername);	
 	}
 	public void AdminGetUserRoll( ) 
 	{

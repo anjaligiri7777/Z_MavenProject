@@ -12,20 +12,21 @@ import com.BasePackage.BaseClass;
 
 public class ExcelReaderClass extends BaseClass {
 	
-	FileInputStream path;
+	public static FileInputStream path;
 	
-	public FileInputStream Excelpath() throws FileNotFoundException 
+	public static FileInputStream Excelpath(String fileName ) throws FileNotFoundException 
 	{
-	    return path = new FileInputStream(projectPath+"\\src\\test\\resources\\ExcelSheetFolder");
+	    return path = new FileInputStream(projectPath+"\\src\\test\\resources\\ExcelSheetFolder\\"+fileName);
 	}
 	
-	public  Sheet sheetRead(FileInputStream path,String sheet) throws EncryptedDocumentException, IOException 
+	public static  Sheet sheetRead(FileInputStream path,String sheet) throws EncryptedDocumentException, IOException 
 	{
 		return WorkbookFactory.create(path).getSheet(sheet);
 	}
-	public Object getSingleData(Sheet sh,int row,int col) 
+	
+	public static  Object getSingleData(Sheet sh,int row,int col) 
 	{
-		if(sh.getRow(row).getCell(col).getCellComment().toString().equalsIgnoreCase("String")) 
+		if(sh.getRow(row).getCell(col).getCellType().toString().equalsIgnoreCase("String")) 
 		{
 			return sh.getRow(row).getCell(col).getStringCellValue();
 		}
@@ -34,5 +35,7 @@ public class ExcelReaderClass extends BaseClass {
 			return sh.getRow(row).getCell(col).getNumericCellValue();
 		}
 	}
+	
+	
 
 }
