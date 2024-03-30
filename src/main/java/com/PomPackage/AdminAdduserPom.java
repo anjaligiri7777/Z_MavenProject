@@ -1,11 +1,12 @@
 package com.PomPackage;
 
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WebElement;	
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.BasePackage.BaseClass;
-import com.util.UtilityClass;
+import com.UtilityPackage.UtilityClass;
+
 
 public class AdminAdduserPom extends BaseClass {
 	public AdminAdduserPom() 
