@@ -34,10 +34,12 @@ public class AdmSysUserTestCase extends BaseClass {
 		UtilityClass.impliwait(7000);
 		
 		AdmSysUserPom adm = new AdmSysUserPom();
+		
 		adm.adminoption();
 		adm.AdminLeftArrow();
 		UtilityClass.impliwait(7);
 		adm.AdminUsernameExcel();
+		adm.AdminGetUserRoll();
 		 
 	}
 	

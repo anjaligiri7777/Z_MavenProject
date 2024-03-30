@@ -15,14 +15,14 @@ public class LoginTestCase extends BaseClass{
 	
 	@BeforeClass
 	public void setUp() 
-	{  // super.launchWebsite();
+	{  
 		base.launchWebsite();
 	}
 	
 	@BeforeClass
 	public void tearDown() 
 	{
-		//driver.close();
+		driver.close();
 		//driver.quit();
 	}
 	@Test

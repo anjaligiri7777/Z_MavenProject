@@ -17,7 +17,7 @@ import com.BasePackage.BaseClass;
 
 public class UtilityClass extends BaseClass{
 	
-	public static Actions act;
+	public static Actions act = new Actions(driver);
 	public static String childewindow;
 	public static String mainpage;
 
@@ -30,6 +30,11 @@ public class UtilityClass extends BaseClass{
 	{
 	   ele.click();
 	}
+	public static void optionSelect(WebElement ele) 
+	{
+	   act.click().click(ele).build().perform();
+	}
+	
 	public static void impliwait(int sec) 
 	{
 		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(sec));
@@ -38,10 +43,7 @@ public class UtilityClass extends BaseClass{
 	{
 		driver.manage().window().maximize();
 	}
-	public void actionsClass() 
-	{
-		 act = new Actions(driver);
-	}
+
 	public static String takeScreenshot(String imageName) throws IOException 
 	{
 		File source = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);

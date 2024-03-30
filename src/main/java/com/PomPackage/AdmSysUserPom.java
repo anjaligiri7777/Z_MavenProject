@@ -38,7 +38,7 @@ public class AdmSysUserPom extends BaseClass{
 	//RollSelect   
 	@FindBy(xpath="(//div[@class='oxd-select-text-input'])[1]")
 	private WebElement userRoll;
-	@FindBy(xpath="(//div[@tabindex='0'])[1]")
+	@FindBy(xpath="(//div[text()='Admin'])[1]")
 	private WebElement AdminRoll;
 	@FindBy(xpath="(//div[@tabindex='0'])[1]")
 	private WebElement ESSRoll;
@@ -76,22 +76,24 @@ public class AdmSysUserPom extends BaseClass{
 	{
 		UtilityClass.eleClick(DownArrow);
 	}
-//	public void AdminGetUsername(String value) 
-//	{
-//       UtilityClass.setText(value, Adminusername);
-//	}
+	public void AdminGetUsername(String value) 
+	{
+       UtilityClass.setText(value, Adminusername);
+	}
 	public void AdminUsernameExcel() throws EncryptedDocumentException, IOException 
 	{
 		 FileInputStream path = ExcelReaderClass.Excelpath("Orange_UserSystem.xlsx");
 	     Sheet sh = ExcelReaderClass.sheetRead(path,"Sheet1");
 	     Object data = ExcelReaderClass.getSingleData(sh, 1, 0);
+	     Object data1 = ExcelReaderClass.getSingleData(sh, 1, 1);
 	    //data.toString();
 	     UtilityClass.setText(data.toString(), Adminusername);	
+	     UtilityClass.setText(data1.toString(),Emp_Name);
 	}
 	public void AdminGetUserRoll( ) 
 	{
 		//act.click(userRoll).moveToElement(AdminRoll).click(AdminRoll).build().perform();
-		UtilityClass.eleClick(AdminRoll);
+		UtilityClass.optionSelect(AdminRoll);
 	}
 	public void AdminGetEmpName(String value) 
 	{   
