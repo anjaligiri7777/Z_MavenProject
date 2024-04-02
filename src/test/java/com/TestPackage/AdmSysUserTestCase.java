@@ -1,46 +1,43 @@
 package com.TestPackage;
 
-import java.io.IOException;
+import java.io.IOException;			
 
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.BasePackage.BaseClass;
 import com.PomPackage.AdmSysUserPom;
+import com.PomPackage.LoginPomClass;
 import com.UtilityPackage.UtilityClass;
 
 public class AdmSysUserTestCase extends BaseClass {
 	
-	BaseClass base = new BaseClass();
 	
-	@BeforeClass
+	AdmSysUserPom adm;
+	UtilityClass ut;
+	LoginPomClass logpom = new LoginPomClass();
+   // LoginTestCase log = new    LoginTestCase();
+	
+	@BeforeMethod
 	public void setUp() 
 	{
-		base.launchWebsite();
+	    adm = ut.loginWeb();
 	}
-	
-	@BeforeClass
-	public void tearDown() 
-	{
-		//driver.close();
-	}
-	
 	@Test
 	public void AdmSysUser() throws IOException, InterruptedException 
 	{   
-		LoginTestCase log = new LoginTestCase();
-		Thread.sleep(5000);
-		log.LoginTest();
-		UtilityClass.impliwait(7000);
 		
-		AdmSysUserPom adm = new AdmSysUserPom();
-		
+	
 		adm.adminoption();
-		adm.AdminLeftArrow();
-		UtilityClass.impliwait(7);
-		adm.AdminUsernameExcel();
-		adm.AdminGetUserRoll();
-		 
+		
+		//adm.AdminLeftArrow();
+//		UtilityClass.impliwait(7);
+//		adm.AdminUsernameExcel();
+//		UtilityClass.impliwait(5);
+//		adm.AdminGetUserRoll();
+		//adm.AdminGetStatus();
+		
 	}
 	
 

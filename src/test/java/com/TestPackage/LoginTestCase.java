@@ -1,6 +1,6 @@
 package com.TestPackage;
 
-import java.io.IOException;			
+import java.io.IOException;					
 
 import org.testng.Assert;				
 import org.testng.annotations.BeforeClass;
@@ -13,25 +13,21 @@ public class LoginTestCase extends BaseClass{
 	
 	BaseClass base = new BaseClass();
 	
+	
 	@BeforeClass
 	public void setUp() 
 	{  
 		base.launchWebsite();
+		
 	}
 	
 	@BeforeClass
 	public void tearDown() 
 	{
-		driver.close();
+		//driver.close();
 		//driver.quit();
 	}
-	@Test
-	public void method() throws IOException, InterruptedException 
-	{   setUp();
-		System.out.println("method run");
-		Thread.sleep(7000);
-		UtilityClass.takeScreenshot("methodimg");
-	}
+	
 	
 //	@Test
 //	public void getTitle() 
@@ -40,44 +36,40 @@ public class LoginTestCase extends BaseClass{
 //		System.out.println(title);
 //		Assert.assertEquals(title,"OrangeHRM");
 //   }
-	@Test
+	@Test(groups = "Login")
 	public void LoginTest() throws IOException, InterruptedException
-	{ 
-		//SoftAssert sa = new SoftAssert();
+	{   
 		LoginPomClass log = new LoginPomClass();
-		 Thread.sleep(4000);
+		
 		String username = log.getuser();
 	    String password = log.getpassword();
-	    
+	    Thread.sleep(5000);
 	    log.setUsername(username);
-	  //  sa.assertEquals(username,"Admin");
+	
 	    log.setPassword(password);
-	  //  sa.assertEquals(password,"admin12");
+        System.out.println(username);
+        System.out.println(password);
 	    log.SubmitButton();
-	   // sa.assertAll();
-	  Thread.sleep(0);
-	   // UtilityClass.takeScreenshot("trial");
-	   
-	 
 	    
 	}
-	@Test
-	public void LoginPageLink() throws IOException 
-	{
-		 LoginPomClass log = new  LoginPomClass();
-		 log.LoginPageLink();
-		 base.windowHandle();
-		 UtilityClass.takeScreenshot("windowID");
-			 
-	}
-	
-	@Test
-	public void NextPageTitle() 
-	{
-		driver.switchTo().window(childewindow);
-		String nextTitle = driver.getTitle();
-		System.out.println(nextTitle);
-		Assert.assertEquals(nextTitle,"Human Resources Management Software | OrangeHRM");
-	}
+//	@Test
+//	public void LoginPageLink() throws IOException 
+//	{
+//		 LoginPomClass log = new  LoginPomClass();
+//		 log.LoginPageLink();
+//		 base.windowHandle();
+//		 UtilityClass.takeScreenshot("windowID");
+//			 
+//	}
+//	
+//	@Test
+//	public void NextPageTitle() 
+//	{
+//		driver.switchTo().window(childewindow);
+//		String nextTitle = driver.getTitle();
+//		System.out.println(nextTitle);
+//		Assert.assertEquals(nextTitle,"Human Resources Management Software | OrangeHRM");
+//	}
+//	
 
-}
+}  

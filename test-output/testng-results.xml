@@ -2,42 +2,45 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-30T14:13:47 IST" name="Default suite" finished-at="2024-03-30T14:14:24 IST" duration-ms="36678">
+  <suite started-at="2024-04-02T11:30:04 IST" name="Default suite" finished-at="2024-04-02T11:30:10 IST" duration-ms="6083">
     <groups>
+      <group name="Login">
+        <method signature="LoginTestCase.LoginTest()[pri:0, instance:com.TestPackage.LoginTestCase@6574a52c]" name="LoginTest" class="com.TestPackage.LoginTestCase"/>
+      </group> <!-- Login -->
     </groups>
-    <test started-at="2024-03-30T14:13:47 IST" name="Default test" finished-at="2024-03-30T14:14:24 IST" duration-ms="36678">
-      <class name="com.TestPackage.AdmSysUserTestCase">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.TestPackage.AdmSysUserTestCase@1a942c18]" started-at="2024-03-30T14:13:47 IST" name="setUp" finished-at="2024-03-30T14:14:02 IST" duration-ms="14894" status="PASS">
+    <test started-at="2024-04-02T11:30:04 IST" name="Default test" finished-at="2024-04-02T11:30:10 IST" duration-ms="6083">
+      <class name="com.TestPackage.LoginTestCase">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.TestPackage.LoginTestCase@6574a52c]" started-at="2024-04-02T11:30:04 IST" name="setUp" finished-at="2024-04-02T11:30:10 IST" duration-ms="5828" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.TestPackage.AdmSysUserTestCase@1a942c18]" started-at="2024-03-30T14:14:02 IST" name="tearDown" finished-at="2024-03-30T14:14:02 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.TestPackage.LoginTestCase@6574a52c]" started-at="2024-04-02T11:30:10 IST" name="tearDown" finished-at="2024-04-02T11:30:10 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method signature="AdmSysUser()[pri:0, instance:com.TestPackage.AdmSysUserTestCase@1a942c18]" started-at="2024-03-30T14:14:02 IST" name="AdmSysUser" finished-at="2024-03-30T14:14:24 IST" duration-ms="21709" status="FAIL">
-          <exception class="org.openqa.selenium.StaleElementReferenceException">
+        <test-method signature="LoginTest()[pri:0, instance:com.TestPackage.LoginTestCase@6574a52c]" started-at="2024-04-02T11:30:10 IST" name="LoginTest" finished-at="2024-04-02T11:30:10 IST" duration-ms="135" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[stale element reference: stale element not found
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//p[text()='Username : Admin']"}
   (Session info: chrome=123.0.6312.86)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.18.1', revision: 'b1d3319b48'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [6b345e646da9e0621ea2198d4014d0b0, actions {actions=[org.openqa.selenium.interactions.Sequence@36fc05ff]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.86, chrome: {chromedriverVersion: 123.0.6312.86 (9b72c47a0536..., userDataDir: C:\Users\ANJALI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50958}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50958/devtoo..., se:cdpVersion: 123.0.6312.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 6b345e646da9e0621ea2198d4014d0b0]]>
+Command: [9090e098df1989219482e2fb59d36fd5, findElement {using=xpath, value=//p[text()='Username : Admin']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.86, chrome: {chromedriverVersion: 123.0.6312.86 (9b72c47a0536..., userDataDir: C:\Users\ANJALI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58701}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58701/devtoo..., se:cdpVersion: 123.0.6312.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9090e098df1989219482e2fb59d36fd5]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//p[text()='Username : Admin']"}
   (Session info: chrome=123.0.6312.86)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.18.1', revision: 'b1d3319b48'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [6b345e646da9e0621ea2198d4014d0b0, actions {actions=[org.openqa.selenium.interactions.Sequence@36fc05ff]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.86, chrome: {chromedriverVersion: 123.0.6312.86 (9b72c47a0536..., userDataDir: C:\Users\ANJALI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50958}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50958/devtoo..., se:cdpVersion: 123.0.6312.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 6b345e646da9e0621ea2198d4014d0b0
+Command: [9090e098df1989219482e2fb59d36fd5, findElement {using=xpath, value=//p[text()='Username : Admin']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.86, chrome: {chromedriverVersion: 123.0.6312.86 (9b72c47a0536..., userDataDir: C:\Users\ANJALI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58701}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58701/devtoo..., se:cdpVersion: 123.0.6312.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9090e098df1989219482e2fb59d36fd5
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -50,11 +53,15 @@ at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.ja
 at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
-at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:605)
-at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:603)
-at com.UtilityPackage.UtilityClass.optionSelect(UtilityClass.java:35)
-at com.PomPackage.AdmSysUserPom.AdminGetUserRoll(AdmSysUserPom.java:96)
-at com.TestPackage.AdmSysUserTestCase.AdmSysUser(AdmSysUserTestCase.java:42)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy11.getText(Unknown Source)
+at com.PomPackage.LoginPomClass.getuser(LoginPomClass.java:39)
+at com.TestPackage.LoginTestCase.LoginTest(LoginTestCase.java:44)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -85,11 +92,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AdmSysUser -->
-      </class> <!-- com.TestPackage.AdmSysUserTestCase -->
+        </test-method> <!-- LoginTest -->
+      </class> <!-- com.TestPackage.LoginTestCase -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

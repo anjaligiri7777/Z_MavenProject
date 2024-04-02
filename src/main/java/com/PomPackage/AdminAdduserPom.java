@@ -1,6 +1,7 @@
 package com.PomPackage;
 
-import org.openqa.selenium.WebElement;	
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -9,30 +10,31 @@ import com.UtilityPackage.UtilityClass;
 
 
 public class AdminAdduserPom extends BaseClass {
+	
+	Actions act = new Actions(driver);
+	
 	public AdminAdduserPom() 
 	{
 		PageFactory.initElements(driver, this);
 	}
-	@FindBy(xpath="//button[@class='oxd-button oxd-button--medium oxd-button--secondary']")
-	private WebElement addButton;
 	
 	//Select UserRoll
-	@FindBy(xpath="(//i[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow'])[1]")
-	private WebElement userRole;
-	@FindBy(xpath="//div[text()='Admin']")
+	@FindBy(xpath="//div/i[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow']")
+	private WebElement userArrowRole;
+	@FindBy(xpath="//div/span[text()='Admin']")
 	private WebElement AdminRole;
-	@FindBy(xpath="//div[text()='ESS']")
+	@FindBy(xpath="//div/span[text()='ESS']")
 	private WebElement ESSRole;
 	
 	@FindBy(xpath="//input[@placeholder='Type for hints...']")
 	private WebElement EmpName;
 	
 	//select Status
-	@FindBy(xpath="// status (//i[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow'])[2]")
+	@FindBy(xpath="//div/i[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow'])[2]")
 	private WebElement statusSelect;
-	@FindBy(xpath="//div[text()='Enabled']")
+	@FindBy(xpath="//div/span[text()='Enabled']")
 	private WebElement EnabledStatus;
-	@FindBy(xpath="//div[text()='Disabled']")
+	@FindBy(xpath="//div/span[text()='Disabled']")
 	private WebElement DisabledStatus;
 	
 	@FindBy(xpath="(//input[@class='oxd-input oxd-input--active'])[2]")
@@ -55,14 +57,12 @@ public class AdminAdduserPom extends BaseClass {
 	
 	//////////////////////////////////Method///////////////////////////////////
 	
-	public void AdminAddButton( ) 
-	{   
-		UtilityClass.eleClick(addButton);
-	}
+
 	public void AdminAdduserRole( ) 
 	{   
-		//act.click(userRole).moveToElement(AdminRole).click(AdminRole).build().perform();
-		UtilityClass.eleClick(userRole);
+		act.click(userArrowRole).perform();
+		 UtilityClass.impliwait(7);
+		act.moveToElement(AdminRole).click(AdminRole).build().perform();
 	}
 	public void AdminAdduserEmpName( String username) 
 	{   
@@ -70,8 +70,9 @@ public class AdminAdduserPom extends BaseClass {
 	}
 	public void AdminAddUserStatus() 
 	{
-		//act.click(statusSelect).moveToElement(EnabledStatus).click(EnabledStatus).build().perform();
-		UtilityClass.eleClick(EnabledStatus);
+		act.click(statusSelect).perform();
+		 UtilityClass.impliwait(7);
+		act.moveToElement(EnabledStatus).click(EnabledStatus).build().perform();
 	}
 	public void AdminPass( String password) 
 	{   

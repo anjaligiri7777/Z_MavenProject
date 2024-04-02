@@ -1,6 +1,6 @@
 package com.PomPackage;
 
-import org.openqa.selenium.WebElement;	
+import org.openqa.selenium.WebElement;				
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -49,7 +49,7 @@ public class LoginPomClass extends BaseClass{
 	 public void setUsername(String username) 
 	 {
 		  UtilityClass.setText(username,userinput);
-	      // userinput.sendKeys(username);
+	     
 	 }	 
 	 public void setPassword(String userpassword ) 
 	 {    

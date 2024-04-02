@@ -1,6 +1,6 @@
 package com.UtilityPackage;
 
-import java.io.File;
+import java.io.File;		
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
@@ -14,10 +14,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import com.BasePackage.BaseClass;
+import com.PomPackage.AdmSysUserPom;
+import com.PomPackage.LoginPomClass;
 
 public class UtilityClass extends BaseClass{
 	
-	public static Actions act = new Actions(driver);
+	public static Actions act ;
 	public static String childewindow;
 	public static String mainpage;
 
@@ -76,20 +78,7 @@ public class UtilityClass extends BaseClass{
 	    driver.switchTo().window(childewindow);
     }
 	
-//	public String takeScreenshot1(String testName) throws IOException{
-//		File scr = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-//
-//		String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("YYYY_MM_DD_hh_mm_ss"));
-//		
-//		String des = (projectPath + "\\ScreenshotFolder" + testName + date + ".png");
-//		File destination = new File(des);
-//				
-//		FileUtils.copyFile(scr, destination);
-//		
-//		return des;
-//	
-//
-//}
+
 	
 	
 }
